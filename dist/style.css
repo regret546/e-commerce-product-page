@@ -1,0 +1,130 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove ul bullets and padding */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  /* Primary Colors */
+  --clr--orange: hsl(26, 100%, 55%);
+  --clr--pale-orange: hsl(25, 100%, 94%);
+  /* Neutral Colors */
+  --clr--very-dark-blue: hsl(220, 13%, 13%);
+  --clr--darl-grayish-blue: hsl(219, 9%, 45%);
+  --clr--grayish-blue: hsl(220, 14%, 75%);
+  --clr--light-grayish-blue: hsl(223, 64%, 98%);
+  --clr--white: hsl(0, 0%, 100%);
+  --clr--black: hsl(0, 0%, 0%);
+}
+
+:root {
+  /* Font Family  */
+  --ff--primary: "Kumbh Sans", sans-serif;
+  /*   Font Size */
+  --fs--regular: 16px;
+  /*   Font Weight */
+  --fw--bold1: 400;
+  --fw--bold1: 700;
+}
+
+body {
+  font-family: var(--ff--primary);
+  font-size: var(--fs--regular);
+  background-color: var(--clr--white);
+}
+
+.container {
+  min-height: 100dvh;
+}
+
+.content {
+  margin: 1rem;
+}
+.content .header {
+  display: flex;
+  justify-content: space-between;
+}
+.content .header__main {
+  display: flex;
+}
+.content .header__profile {
+  display: flex;
+}
+.content .header__profile_cart {
+  width: 28px;
+  height: 28px;
+}
+.content .header__profile_avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */

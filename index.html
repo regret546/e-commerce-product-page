@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="dist/style.css" />
     <title>Frontend Mentor | E-commerce product page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -34,17 +35,28 @@
     <div class="container">
       <main class="content">
         <section class="header">
-          <div class="header__logo"></div>
-          <ul class="header__navbar">
-            <li>Collections</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-          <div class="header__addcart"></div>
-          <div class="header__profile"></div>
-          Men Women About Contact
+          <div class="header__main">
+            <h1 class="header__main_logo">sneakers</h1>
+            <ul class="header__main_navbar">
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="header__profile">
+            <img
+              src="images/icon-cart.svg"
+              alt="cart"
+              class="header__profile_cart"
+            />
+            <img
+              src="images/image-avatar.png"
+              alt="avatar"
+              class="header__profile_avatar"
+            />
+          </div>
         </section>
         <section class="product">
           <div class="product__image"></div>

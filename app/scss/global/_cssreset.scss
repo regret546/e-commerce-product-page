@@ -41,6 +41,11 @@ textarea,
 select {
   font: inherit;
 }
+/* Remove ul bullets and padding */
+ul {
+  list-style: none;
+  padding: 0;
+}
 /*
     7. Avoid text overflows
   */
