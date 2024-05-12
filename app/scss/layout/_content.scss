@@ -7,6 +7,7 @@
       display: flex;
       gap: 1rem;
       align-items: center;
+
       margin: 1.5rem;
       &_logo {
         order: 2;
@@ -16,20 +17,43 @@
 
       &_ham-menu {
         cursor: pointer;
-        display: grid;
-        place-items: center;
+
+        position: relative;
         width: 20px;
         height: 20px;
         margin-left: auto;
 
         span {
-          height: 4px;
+          position: absolute;
+          height: 3px;
           width: 100%;
           background-color: var(--clr--darl-grayish-blue);
           border-radius: 20px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: 0.3s ease-in-out;
+
+          &:nth-child(1) {
+            top: 25%;
+          }
+          &:nth-child(3) {
+            top: 75%;
+          }
         }
-        &:hover {
-          opacity: 0.8;
+
+        &.active span:nth-child(1) {
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        &.active span:nth-child(3) {
+          top: 50%;
+          transform: translate(-51%, -31%) rotate(-47deg);
         }
       }
       &_navbar {
@@ -40,15 +64,7 @@
         top: 0;
         left: -60%;
         width: 60%;
-
-        @keyframes left-to-right {
-          0% {
-            left: 0%;
-          }
-          100% {
-            left: 50%;
-          }
-        }
+        transition: 0.3s ease;
 
         img {
           margin-top: 1rem;
@@ -65,9 +81,9 @@
             font-weight: var(--fw--bold2);
           }
         }
-      }
-      .active {
-        visibility: hidden;
+        &.active {
+          left: 0;
+        }
       }
     }
 
