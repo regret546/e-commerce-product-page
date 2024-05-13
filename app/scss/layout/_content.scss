@@ -7,21 +7,22 @@
       display: flex;
       gap: 1rem;
       align-items: center;
-
       margin: 1.5rem;
       &_logo {
         order: 2;
         font-size: 2rem;
-        margin-top: -10px;
+        margin-top: -8px;
+        margin-left: 2rem;
       }
 
       &_ham-menu {
         cursor: pointer;
-
-        position: relative;
+        position: fixed;
         width: 20px;
         height: 20px;
         margin-left: auto;
+        isolation: isolate;
+        z-index: 1;
 
         span {
           position: absolute;
@@ -53,10 +54,11 @@
 
         &.active span:nth-child(3) {
           top: 50%;
-          transform: translate(-51%, -31%) rotate(-47deg);
+          transform: translate(-51%, -40%) rotate(-47deg);
         }
       }
       &_navbar {
+        padding-top: 5rem;
         order: 1;
         background-color: var(--clr--white);
         height: 100%;
