@@ -1,13 +1,14 @@
 .content {
   .header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-
+    margin-inline: 1rem;
     &__main {
       display: flex;
       gap: 1rem;
       align-items: center;
-      margin: 1.5rem;
+      margin: 1.5rem 0;
       &_logo {
         order: 2;
         font-size: 2rem;
@@ -91,9 +92,11 @@
 
     &__profile {
       display: flex;
+      align-items: center;
+      gap: 1rem;
       &_cart {
-        width: 28px;
-        height: 28px;
+        width: 22px;
+        height: 22px;
       }
       &_avatar {
         width: 25px;
