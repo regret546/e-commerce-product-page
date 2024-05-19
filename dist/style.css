@@ -220,6 +220,8 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
 }
 .content .product .carousel .slide img {
   display: block;
@@ -228,6 +230,7 @@ body {
 }
 .content .product .carousel .slide[data-active] {
   opacity: 1;
+  transition-delay: 0ms;
 }
 .content .product .carousel .carousel-button {
   cursor: pointer;
