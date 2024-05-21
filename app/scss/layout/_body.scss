@@ -1,6 +1,17 @@
 body {
+  position: relative;
   font-family: var(--ff--primary);
   font-size: var(--fs--regular);
   background-color: var(--clr--white);
   color: var(--clr--very-dark-blue);
+}
+
+.background-wrapper {
+  position: fixed;
+  background-color: var(--clr--darl-grayish-blue);
+  opacity: 0.3;
+  inset: 0;
+  left: 60%;
+  z-index: 3;
+  transition: all 400ms ease-in;
 }
