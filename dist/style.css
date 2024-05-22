@@ -145,7 +145,7 @@ body {
 }
 .content .header__main_ham-menu {
   cursor: pointer;
-  position: fixed;
+  position: sticky;
   width: 20px;
   height: 20px;
   margin-left: auto;
@@ -256,10 +256,14 @@ body {
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
+  transition: all 100ms ease-in-out;
 }
 .content .product .carousel .carousel-button img {
   height: 10px;
   width: 10px;
+}
+.content .product .carousel .carousel-button:hover {
+  scale: 1.15;
 }
 .content .product .carousel .carousel-button.prev {
   left: 0.5rem;
