@@ -178,5 +178,54 @@
         }
       }
     }
+
+    &__details {
+      display: grid;
+      gap: 1rem;
+      padding: 1.2rem;
+      &_company {
+        text-transform: uppercase;
+        font-weight: var(--fw--bold2);
+        font-size: 0.8rem;
+        color: var(--clr--orange);
+        letter-spacing: 2px;
+      }
+
+      &_subject {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+      &_info {
+        color: var(--clr--darl-grayish-blue);
+      }
+      &_listing {
+        &_price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.5rem;
+          font-weight: var(--fw--bold2);
+          .current_price {
+            display: flex;
+            align-items: center;
+            .discount_price {
+              height: 100%;
+              font-size: 1rem;
+              padding: 3px;
+              border-radius: 3px;
+              background-color: var(--clr--pale-orange);
+              color: var(--clr--orange);
+              margin-left: 1rem;
+            }
+          }
+          .previous_price {
+            font-size: 1rem;
+            font-weight: var(--fw--bold2);
+            color: var(--clr--darl-grayish-blue);
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
   }
 }
