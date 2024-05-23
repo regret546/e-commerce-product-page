@@ -11,6 +11,10 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -55,7 +59,7 @@
           </div>
           <div class="header__profile">
             <div class="header__profile_cart">
-              <img src="images/icon-cart.svg" alt="cart" />
+              <i class="fa-solid fa-cart-shopping"></i>
             </div>
             <img
               src="images/image-avatar.png"
@@ -101,13 +105,20 @@
                 </p>
                 <p class="previous_price">$250.00</p>
               </div>
-              <div class="product__details_listing_quantity">0</div>
-              <button class="product__details_listing_addtocart">
-                Add to cart
-              </button>
+              <div class="product__details_listing_orderoption">
+                <div class="product__details_listing_orderoption_quantity">
+                  <img class="minus" src="images/icon-minus.svg" alt="minus" />
+                  <p>0</p>
+                  <img class="plus" src="images/icon-plus.svg" alt="plus" />
+                </div>
+                <button
+                  class="product__details_listing_orderoption_addtocartbtn"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> Add to cart
+                </button>
+              </div>
             </div>
           </div>
-          0 Add to cart
         </section>
       </main>
     </div>
@@ -116,7 +127,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">Regret546</a>.
     </div>
     <script src="app/js/app.js"></script>
   </body>

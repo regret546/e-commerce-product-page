@@ -65,7 +65,7 @@
         }
       }
       &_navbar {
-        padding-top: 5rem;
+        padding-top: 6rem;
         order: 1;
         background-color: var(--clr--white);
         height: 100%;
@@ -86,8 +86,13 @@
           gap: 1rem;
           margin-left: 1rem;
           li {
+            cursor: pointer;
             color: var(--clr--very-dark-blue);
             font-weight: var(--fw--bold2);
+            transition: all 100ms ease-in;
+            &:hover {
+              color: var(--clr--orange);
+            }
           }
         }
         &.active {
@@ -101,10 +106,13 @@
       align-items: center;
       gap: 1rem;
       &_cart {
+        cursor: pointer;
         width: 22px;
         height: 22px;
+        color: var(--clr--darl-grayish-blue);
       }
       &_avatar {
+        cursor: pointer;
         width: 25px;
         height: 25px;
         border-radius: 50%;
@@ -199,6 +207,8 @@
         color: var(--clr--darl-grayish-blue);
       }
       &_listing {
+        display: grid;
+        gap: 1rem;
         &_price {
           display: flex;
           justify-content: space-between;
@@ -211,7 +221,7 @@
             .discount_price {
               height: 100%;
               font-size: 1rem;
-              padding: 3px;
+              padding: 3px 8px;
               border-radius: 3px;
               background-color: var(--clr--pale-orange);
               color: var(--clr--orange);
@@ -223,6 +233,50 @@
             font-weight: var(--fw--bold2);
             color: var(--clr--darl-grayish-blue);
             text-decoration: line-through;
+          }
+        }
+
+        &_orderoption {
+          display: grid;
+          gap: 1rem;
+          width: 100%;
+          font-size: 0.9rem;
+          &_addtocartbtn,
+          &_quantity {
+            padding: 1rem;
+            border-radius: 0.7rem;
+          }
+          &_quantity {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--clr--light-grayish-blue);
+
+            p {
+              font-weight: var(--fw--bold2);
+            }
+            .minus,
+            .plus {
+              cursor: pointer;
+            }
+            .minus {
+              width: 12px;
+              height: 4px;
+            }
+            .plus {
+              height: 12px;
+              width: 12px;
+            }
+          }
+          &_addtocartbtn {
+            cursor: pointer;
+            border: none;
+            background-color: var(--clr--orange);
+            font-weight: var(--fw--bold2);
+            color: var(--clr--white);
+            i {
+              margin-right: 0.5rem;
+            }
           }
         }
       }
