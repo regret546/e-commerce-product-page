@@ -20,7 +20,6 @@
         order: 2;
         font-size: 2rem;
         margin-top: -8px;
-        margin-left: 2rem;
       }
 
       &_ham-menu {
@@ -105,11 +104,18 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      transition: none;
       &_cart {
-        cursor: pointer;
-        width: 22px;
-        height: 22px;
-        color: var(--clr--darl-grayish-blue);
+        i {
+          cursor: pointer;
+          width: 22px;
+          height: 22px;
+          color: var(--clr--darl-grayish-blue);
+
+          &:hover {
+            color: var(--clr--orange);
+          }
+        }
       }
       &_avatar {
         cursor: pointer;
@@ -121,9 +127,15 @@
   }
 
   .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .carousel {
-      height: 350px;
+      display: grid;
       width: 100%;
+      height: 350px;
+      max-width: 600px;
       position: relative;
 
       .slide {
@@ -132,8 +144,10 @@
         opacity: 0;
         transition: 200ms opacity ease-in-out;
         transition-delay: 200ms;
+        width: 100%;
         img {
           display: block;
+
           height: 100%;
           width: 100%;
         }
@@ -274,6 +288,11 @@
             background-color: var(--clr--orange);
             font-weight: var(--fw--bold2);
             color: var(--clr--white);
+            box-shadow: var(--clr--pale-orange) 0px 20px 20px;
+
+            &:hover {
+              opacity: 0.8;
+            }
             i {
               margin-right: 0.5rem;
             }

@@ -141,7 +141,6 @@ body {
   order: 2;
   font-size: 2rem;
   margin-top: -8px;
-  margin-left: 2rem;
 }
 .content .header__main_ham-menu {
   cursor: pointer;
@@ -217,12 +216,16 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: none;
 }
-.content .header__profile_cart {
+.content .header__profile_cart i {
   cursor: pointer;
   width: 22px;
   height: 22px;
   color: var(--clr--darl-grayish-blue);
+}
+.content .header__profile_cart i:hover {
+  color: var(--clr--orange);
 }
 .content .header__profile_avatar {
   cursor: pointer;
@@ -230,9 +233,16 @@ body {
   height: 25px;
   border-radius: 50%;
 }
+.content .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .content .product .carousel {
-  height: 350px;
+  display: grid;
   width: 100%;
+  height: 350px;
+  max-width: 600px;
   position: relative;
 }
 .content .product .carousel .slide {
@@ -241,6 +251,7 @@ body {
   opacity: 0;
   transition: 200ms opacity ease-in-out;
   transition-delay: 200ms;
+  width: 100%;
 }
 .content .product .carousel .slide img {
   display: block;
@@ -372,6 +383,10 @@ body {
   background-color: var(--clr--orange);
   font-weight: var(--fw--bold2);
   color: var(--clr--white);
+  box-shadow: var(--clr--pale-orange) 0px 20px 20px;
+}
+.content .product__details_listing_orderoption_addtocartbtn:hover {
+  opacity: 0.8;
 }
 .content .product__details_listing_orderoption_addtocartbtn i {
   margin-right: 0.5rem;
