@@ -14,4 +14,9 @@ body {
   left: 60%;
   z-index: 3;
   transition: all 400ms ease-in;
+  animation-fill-mode: forwards;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
 }

@@ -112,6 +112,12 @@ body {
   left: 60%;
   z-index: 3;
   transition: all 400ms ease-in;
+  animation-fill-mode: forwards;
+}
+@media (min-width: 700px) {
+  .background-wrapper {
+    display: none;
+  }
 }
 
 .container {
@@ -188,7 +194,7 @@ body {
   top: 0;
   left: -60%;
   width: 60%;
-  transition: 0.3s ease;
+  transition: none;
 }
 .content .header__main_navbar img {
   margin-top: 1rem;
@@ -212,16 +218,19 @@ body {
 .content .header__main_navbar.active {
   left: 0;
 }
+.content .header__main_navbar.transition-enabled {
+  transition: 0.3s ease-in-out;
+}
 .content .header__profile {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   transition: none;
 }
 .content .header__profile_cart i {
   cursor: pointer;
-  width: 22px;
-  height: 22px;
+  font-size: 20px;
+  margin-top: 5px;
   color: var(--clr--darl-grayish-blue);
 }
 .content .header__profile_cart i:hover {
@@ -242,14 +251,15 @@ body {
   display: grid;
   width: 100%;
   height: 350px;
-  max-width: 600px;
+  max-width: 500px;
+  min-width: 250px;
   position: relative;
 }
 .content .product .carousel .slide {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: 200ms opacity ease-in-out;
+  transition: 200ms opacity ease-in;
   transition-delay: 200ms;
   width: 100%;
 }
@@ -275,7 +285,7 @@ body {
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
-  transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in;
 }
 .content .product .carousel .carousel-button img {
   height: 10px;
@@ -390,4 +400,30 @@ body {
 }
 .content .product__details_listing_orderoption_addtocartbtn i {
   margin-right: 0.5rem;
+}
+@media (min-width: 700px) {
+  .content .header {
+    padding-inline: 2rem;
+  }
+  .content .header__main_logo {
+    order: 1;
+  }
+  .content .header__main_ham-menu {
+    order: 2;
+    display: none;
+  }
+  .content .header__main_navbar {
+    transition: none;
+    position: sticky;
+    inset: 0;
+    padding: 0;
+    margin-left: 1rem;
+  }
+  .content .header__main_navbar ul {
+    display: flex;
+  }
+  .content .header__profile_avatar {
+    width: 35px;
+    height: 35px;
+  }
 }/*# sourceMappingURL=style.css.map */

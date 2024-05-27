@@ -5,6 +5,7 @@ const buttons = document.querySelectorAll("[data-carousel-button]");
 let navbarIsActive = false;
 let currentIndex = 0;
 
+// Hamburger menu drop down //
 hamburgerMenu.addEventListener("click", function () {
   if (!navbarIsActive) {
     navbarIsActive = true;
@@ -21,6 +22,7 @@ hamburgerMenu.addEventListener("click", function () {
   }
 });
 
+// Carousel buttons when click and what image will display base on the buttons click//
 buttons.forEach((button) => {
   const slides = document.querySelectorAll(".slide");
   button.addEventListener("click", function () {
@@ -46,3 +48,16 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+// Disable transition when resize down//
+function handleResize() {
+  if (window.innerWidth < 700) {
+    navBar.classList.add("transition-enabled");
+  } else {
+    navBar.classList.remove("transition-enabled");
+  }
+}
+
+handleResize();
+
+window.addEventListener("resize", handleResize);
