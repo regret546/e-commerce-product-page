@@ -23,6 +23,7 @@ hamburgerMenu.addEventListener("click", function () {
 });
 
 // Carousel buttons when click and what image will display base on the buttons click//
+// Works only for mobile carousel//
 buttons.forEach((button) => {
   const slides = document.querySelectorAll(".slide");
   button.addEventListener("click", function () {

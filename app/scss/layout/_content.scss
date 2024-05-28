@@ -1,4 +1,6 @@
 .content {
+  min-height: 100vh;
+  display: grid;
   .header {
     position: sticky;
     top: 0;
@@ -108,6 +110,7 @@
       align-items: center;
       gap: 1.5rem;
       transition: none;
+
       &_cart {
         i {
           cursor: pointer;
@@ -306,6 +309,11 @@
     }
   }
   @media (min-width: 700px) {
+    align-items: start;
+    justify-items: center;
+    grid-template-rows: min-content;
+
+    gap: 3rem;
     .header {
       padding-inline: 2rem;
       &__main {
@@ -337,6 +345,70 @@
         &_avatar {
           width: 35px;
           height: 35px;
+        }
+      }
+    }
+    .product {
+      max-width: 1200px;
+      width: 100%;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: start;
+      padding: 1rem;
+      grid-template-rows: min-content;
+
+      .carousel {
+        min-width: 330px;
+        max-width: 450px;
+
+        .slide {
+          img {
+            height: 400px;
+            border-radius: 1rem;
+            overflow: hidden;
+          }
+        }
+
+        .carousel-button {
+          display: none;
+        }
+      }
+      &__details {
+        display: grid;
+        grid-template-rows: min-content;
+        text-align: left;
+        max-width: 600px;
+
+        &_company {
+        }
+        &_subject {
+        }
+        &_info {
+        }
+        &_listing {
+          &_price {
+            flex-direction: column;
+            align-items: start;
+            .current_price {
+              .discount_price {
+                padding-top: 5px;
+              }
+            }
+            .previous_price {
+            }
+          }
+
+          &_orderoption {
+            display: flex;
+
+            &_quantity {
+              width: 30%;
+            }
+
+            &_addtocartbtn {
+              width: 70%;
+            }
+          }
         }
       }
     }
