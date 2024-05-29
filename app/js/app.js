@@ -46,6 +46,7 @@ buttons.forEach((button) => {
       }
     });
     slides[currentIndex].setAttribute("data-active", "");
+    console.log(currentIndex);
     delete activeSlide.dataset.active;
   });
 });
