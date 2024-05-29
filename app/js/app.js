@@ -2,6 +2,8 @@ const navBar = document.querySelector("#mainNav");
 const hamburgerMenu = document.querySelector("#ham-menu");
 const backgroundWrapper = document.querySelector("#bgWrapper");
 const buttons = document.querySelectorAll("[data-carousel-button]");
+const imgThumbnails = document.querySelectorAll("#img-thumbnail");
+const slides = document.querySelectorAll(".slide");
 let navbarIsActive = false;
 let currentIndex = 0;
 
@@ -25,7 +27,6 @@ hamburgerMenu.addEventListener("click", function () {
 // Carousel buttons when click and what image will display base on the buttons click//
 // Works only for mobile carousel//
 buttons.forEach((button) => {
-  const slides = document.querySelectorAll(".slide");
   button.addEventListener("click", function () {
     let offset;
     if (button.classList[1] === "next") {
@@ -46,8 +47,29 @@ buttons.forEach((button) => {
       }
     });
     slides[currentIndex].setAttribute("data-active", "");
-    console.log(currentIndex);
     delete activeSlide.dataset.active;
+  });
+});
+
+// Carousel buttons when thumbnail image is click//
+imgThumbnails.forEach((image, index) => {
+  image.addEventListener("click", function () {
+    currentIndex = index;
+    let activeSlide;
+    let activeThumbnail;
+    slides.forEach((slide) => {
+      if (slide.hasAttribute("data-active")) {
+        activeSlide = slide;
+      } else {
+        return;
+      }
+    });
+    if (slides[currentIndex].hasAttribute("data-active")) {
+      return;
+    } else {
+      slides[currentIndex].setAttribute("data-active", "");
+      delete activeSlide.dataset.active;
+    }
   });
 });
 

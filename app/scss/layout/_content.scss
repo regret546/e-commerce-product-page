@@ -403,6 +403,12 @@
             &:hover {
               border: 2px solid var(--clr--orange);
             }
+            &.isclick {
+              border: 2px solid var(--clr--orange);
+              img {
+                opacity: 0.4;
+              }
+            }
           }
         }
       }

@@ -485,6 +485,12 @@ body {
   .content .product .carousel .image-thumbnail li:hover {
     border: 2px solid var(--clr--orange);
   }
+  .content .product .carousel .image-thumbnail li.isclick {
+    border: 2px solid var(--clr--orange);
+  }
+  .content .product .carousel .image-thumbnail li.isclick img {
+    opacity: 0.4;
+  }
   .content .product__details {
     display: grid;
     grid-template-rows: min-content;
