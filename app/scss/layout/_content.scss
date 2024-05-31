@@ -357,17 +357,19 @@
       max-width: 1200px;
       width: 100%;
       flex-direction: row;
-      gap: 2rem;
-      align-items: start;
+      gap: 3rem;
+      align-items: end;
       padding: 1rem;
       grid-template-rows: min-content;
 
       .carousel {
+        align-self: flex-start;
         min-width: 330px;
         max-width: 450px;
+        height: 400px;
 
         ul {
-          height: 380px;
+          height: 420px;
           .slide {
             img {
               height: 100%;
@@ -388,21 +390,19 @@
           gap: 1rem;
 
           li {
-            max-width: 100px;
+            display: flex;
+
             max-height: 100px;
             border-radius: 0.7rem;
             img {
+              width: 100%;
               cursor: pointer;
               border-radius: 0.5rem;
-
               &:hover {
                 opacity: 0.4;
               }
             }
 
-            &:hover {
-              border: 2px solid var(--clr--orange);
-            }
             &.isclick {
               border: 2px solid var(--clr--orange);
               img {
@@ -413,6 +413,7 @@
         }
       }
       &__details {
+        width: 80%;
         display: grid;
         grid-template-rows: min-content;
         text-align: left;
@@ -421,6 +422,8 @@
         &_company {
         }
         &_subject {
+          font-size: 2.8rem;
+          line-height: 2.5rem;
         }
         &_info {
         }
@@ -439,13 +442,13 @@
 
           &_orderoption {
             display: flex;
-
+            width: 80%;
             &_quantity {
-              width: 30%;
+              width: 40%;
             }
 
             &_addtocartbtn {
-              width: 70%;
+              width: 60%;
             }
           }
         }

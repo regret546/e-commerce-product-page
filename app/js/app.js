@@ -57,18 +57,24 @@ imgThumbnails.forEach((image, index) => {
     currentIndex = index;
     let activeSlide;
     let activeThumbnail;
-    slides.forEach((slide) => {
+    slides.forEach((slide, index) => {
       if (slide.hasAttribute("data-active")) {
         activeSlide = slide;
+        activeThumbnail = imgThumbnails[index];
       } else {
         return;
       }
     });
     if (slides[currentIndex].hasAttribute("data-active")) {
+      if (currentIndex === 0) {
+        imgThumbnails[currentIndex].classList.add("isclick");
+      }
       return;
     } else {
       slides[currentIndex].setAttribute("data-active", "");
+      imgThumbnails[currentIndex].classList.add("isclick");
       delete activeSlide.dataset.active;
+      activeThumbnail.classList.remove("isclick");
     }
   });
 });
