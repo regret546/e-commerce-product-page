@@ -4,6 +4,9 @@ const backgroundWrapper = document.querySelector("#bgWrapper");
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const imgThumbnails = document.querySelectorAll("#img-thumbnail");
 const slides = document.querySelectorAll(".slide");
+const cartButton = document.querySelector("#cartBtn");
+const cardBasket = document.querySelector("#cartBkt");
+let cartIsActive = false;
 let navbarIsActive = false;
 let currentIndex = 0;
 
@@ -77,6 +80,17 @@ imgThumbnails.forEach((image, index) => {
       activeThumbnail.classList.remove("isclick");
     }
   });
+});
+
+//Cart function//
+cartButton.addEventListener("click", function () {
+  if (!cartIsActive) {
+    cardBasket.style.display = "flex";
+    cartIsActive = true;
+  } else {
+    cardBasket.style.display = "none";
+    cartIsActive = false;
+  }
 });
 
 // Disable transition when resize down//
