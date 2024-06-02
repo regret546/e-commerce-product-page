@@ -1,3 +1,4 @@
+const header = document.querySelector("#headerSection");
 const navBar = document.querySelector("#mainNav");
 const hamburgerMenu = document.querySelector("#ham-menu");
 const backgroundWrapper = document.querySelector("#bgWrapper");
@@ -99,6 +100,17 @@ function handleResize() {
     navBar.classList.add("transition-enabled");
   } else {
     navBar.classList.remove("transition-enabled");
+  }
+}
+
+/* Add buttom-border when scrolled */
+window.addEventListener("scroll", checkHeight);
+
+function checkHeight() {
+  if (window.scrollY > 100) {
+    header.classList.add("addBorder");
+  } else {
+    header.classList.remove("addBorder");
   }
 }
 

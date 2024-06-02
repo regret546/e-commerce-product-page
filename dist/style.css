@@ -86,6 +86,7 @@ h6 {
   --clr--black: hsl(0, 0%, 0%);
 }
 
+/* border-bottom: 1px double var(--clr--grayish-blue); */
 :root {
   /* Font Family  */
   --ff--primary: "Kumbh Sans", sans-serif;
@@ -128,6 +129,9 @@ body {
   min-height: 100vh;
   display: grid;
 }
+.content .addBorder {
+  border-bottom: 1px double var(--clr--grayish-blue);
+}
 .content .header {
   position: sticky;
   top: 0;
@@ -138,7 +142,6 @@ body {
   background-color: var(--clr--white);
   z-index: 2;
   width: 100%;
-  border-bottom: 1px double var(--clr--black);
 }
 .content .header .cart-basket {
   display: none;
@@ -474,6 +477,11 @@ body {
   }
   .content .header__main_navbar ul {
     display: flex;
+  }
+  .content .header__main_navbar ul li:hover {
+    transition: none;
+    margin-bottom: -2rem;
+    border-bottom: 3px solid var(--clr--orange);
   }
   .content .header__profile_avatar {
     width: 35px;
