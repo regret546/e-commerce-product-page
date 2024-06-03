@@ -7,6 +7,7 @@ const imgThumbnails = document.querySelectorAll("#img-thumbnail");
 const slides = document.querySelectorAll(".slide");
 const cartButton = document.querySelector("#cartBtn");
 const cardBasket = document.querySelector("#cartBkt");
+const carouselOverlay = document.querySelector("#carouselOverlay");
 let cartIsActive = false;
 let navbarIsActive = false;
 let currentIndex = 0;
@@ -98,6 +99,7 @@ cartButton.addEventListener("click", function () {
 function handleResize() {
   if (window.innerWidth < 700) {
     navBar.classList.add("transition-enabled");
+    carouselOverlay.style.display = "none";
   } else {
     navBar.classList.remove("transition-enabled");
   }
@@ -105,14 +107,15 @@ function handleResize() {
 
 /* Add buttom-border when scrolled */
 window.addEventListener("scroll", checkHeight);
-
 function checkHeight() {
-  if (window.scrollY > 100) {
+  if (window.scrollY > 40) {
     header.classList.add("addBorder");
   } else {
     header.classList.remove("addBorder");
   }
 }
+
+//For carousel overlay function//
 
 handleResize();
 

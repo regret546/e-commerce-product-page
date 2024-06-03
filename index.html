@@ -37,8 +37,58 @@
   </head>
   <body>
     <div id="bgWrapper"></div>
+    <div id="bgWrapper2" class="background-wrapper2"></div>
     <div class="container">
       <main class="content">
+        <div class="carouseloverlay" id="carouselOverlay">
+          <button class="carousel-button prev" data-carousel-button="prev">
+            <img src="images/icon-previous.svg" alt="" />
+          </button>
+          <button class="carousel-button next" data-carousel-button="next">
+            <img src="images/icon-next.svg" alt="" />
+          </button>
+          <ul>
+            <li class="slide" data-active>
+              <img src="images/image-product-1.jpg" alt="Image 1" />
+            </li>
+            <li class="slide">
+              <img src="images/image-product-2.jpg" alt="Image 2" />
+            </li>
+            <li class="slide">
+              <img src="images/image-product-3.jpg" alt="Image 3" />
+            </li>
+            <li class="slide">
+              <img src="images/image-product-4.jpg" alt="Image4" />
+            </li>
+          </ul>
+
+          <ul class="image-thumbnail">
+            <li id="img-thumbnail">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                alt="image-thumbnail-1"
+              />
+            </li>
+            <li id="img-thumbnail">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                alt="image-thumbnail-2"
+              />
+            </li>
+            <li id="img-thumbnail">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                alt="image-thumbnail-3"
+              />
+            </li>
+            <li id="img-thumbnail">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                alt="image-thumbnail-4"
+              />
+            </li>
+          </ul>
+        </div>
         <section class="header" id="headerSection">
           <div class="cart-basket" id="cartBkt">
             <h2>Cart</h2>
