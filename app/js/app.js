@@ -2,12 +2,15 @@ const header = document.querySelector("#headerSection");
 const navBar = document.querySelector("#mainNav");
 const hamburgerMenu = document.querySelector("#ham-menu");
 const backgroundWrapper = document.querySelector("#bgWrapper");
+const backgroundWrapper2 = document.querySelector("#bgWrapper2");
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const imgThumbnails = document.querySelectorAll("#img-thumbnail");
 const slides = document.querySelectorAll(".slide");
 const cartButton = document.querySelector("#cartBtn");
 const cardBasket = document.querySelector("#cartBkt");
 const carouselOverlay = document.querySelector("#carouselOverlay");
+const closeButton = document.querySelector("#closeBtn");
+let slideIsActive = false;
 let cartIsActive = false;
 let navbarIsActive = false;
 let currentIndex = 0;
@@ -116,6 +119,23 @@ function checkHeight() {
 }
 
 //For carousel overlay function//
+slides.forEach((slide) => {
+  slide.addEventListener("click", function () {
+    if (!slideIsActive) {
+      slideIsActive = true;
+      carouselOverlay.style.display = "grid";
+      backgroundWrapper2.classList.add("background-wrapper2");
+    } else {
+      slideIsActive = false;
+    }
+  });
+});
+
+closeButton.addEventListener("click", function () {
+  carouselOverlay.style.display = "none";
+  backgroundWrapper2.classList.remove("background-wrapper2");
+  slideIsActive = false;
+});
 
 handleResize();
 
