@@ -1,15 +1,9 @@
 const header = document.querySelector("#headerSection");
 const navBar = document.querySelector("#mainNav");
 const hamburgerMenu = document.querySelector("#ham-menu");
-const backgroundWrapper = document.querySelector("#bgWrapper");
-const backgroundWrapper2 = document.querySelector("#bgWrapper2");
-const buttons = document.querySelectorAll("[data-carousel-button]");
-const imgThumbnails = document.querySelectorAll("#img-thumbnail");
-const slides = document.querySelectorAll(".slide");
 const cartButton = document.querySelector("#cartBtn");
 const cardBasket = document.querySelector("#cartBkt");
-const carouselOverlay = document.querySelector("#carouselOverlay");
-const closeButton = document.querySelector("#closeBtn");
+
 let slideIsActive = false;
 let cartIsActive = false;
 let navbarIsActive = false;
@@ -30,61 +24,6 @@ hamburgerMenu.addEventListener("click", function () {
   } else {
     backgroundWrapper.classList.add("background-wrapper");
   }
-});
-
-// Carousel buttons when click and what image will display base on the buttons click//
-// Works only for mobile carousel//
-buttons.forEach((button) => {
-  button.addEventListener("click", function () {
-    let offset;
-    if (button.classList[1] === "next") {
-      offset = 1;
-    } else {
-      offset = -1;
-    }
-    currentIndex = eval(currentIndex + offset);
-    if (currentIndex < 0) currentIndex = eval(currentIndex + slides.length);
-    if (currentIndex >= slides.length) currentIndex = 0;
-
-    let activeSlide;
-    slides.forEach((slide) => {
-      if (slide.hasAttribute("data-active")) {
-        activeSlide = slide;
-      } else {
-        return;
-      }
-    });
-    slides[currentIndex].setAttribute("data-active", "");
-    delete activeSlide.dataset.active;
-  });
-});
-
-// Carousel buttons when thumbnail image is click//
-imgThumbnails.forEach((image, index) => {
-  image.addEventListener("click", function () {
-    currentIndex = index;
-    let activeSlide;
-    let activeThumbnail;
-    slides.forEach((slide, index) => {
-      if (slide.hasAttribute("data-active")) {
-        activeSlide = slide;
-        activeThumbnail = imgThumbnails[index];
-      } else {
-        return;
-      }
-    });
-    if (slides[currentIndex].hasAttribute("data-active")) {
-      if (currentIndex === 0) {
-        imgThumbnails[currentIndex].classList.add("isclick");
-      }
-      return;
-    } else {
-      slides[currentIndex].setAttribute("data-active", "");
-      imgThumbnails[currentIndex].classList.add("isclick");
-      delete activeSlide.dataset.active;
-      activeThumbnail.classList.remove("isclick");
-    }
-  });
 });
 
 //Cart function//
@@ -117,25 +56,6 @@ function checkHeight() {
     header.classList.remove("addBorder");
   }
 }
-
-//For carousel overlay function//
-slides.forEach((slide) => {
-  slide.addEventListener("click", function () {
-    if (!slideIsActive) {
-      slideIsActive = true;
-      carouselOverlay.style.display = "grid";
-      backgroundWrapper2.classList.add("background-wrapper2");
-    } else {
-      slideIsActive = false;
-    }
-  });
-});
-
-closeButton.addEventListener("click", function () {
-  carouselOverlay.style.display = "none";
-  backgroundWrapper2.classList.remove("background-wrapper2");
-  slideIsActive = false;
-});
 
 handleResize();
 
