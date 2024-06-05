@@ -2,6 +2,7 @@ const backgroundWrapper = document.querySelector("#bgWrapper");
 const backgroundWrapper2 = document.querySelector("#bgWrapper2");
 const imgThumbnails = document.querySelectorAll("#img-thumbnail");
 const slides = document.querySelectorAll(".slide");
+const slides2 = document.querySelectorAll(".slide2");
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const carouselOverlay = document.querySelector("#carouselOverlay");
 const closeButton = document.querySelector("#closeBtn");
@@ -19,16 +20,29 @@ buttons.forEach((button) => {
     currentIndex = eval(currentIndex + offset);
     if (currentIndex < 0) currentIndex = eval(currentIndex + slides.length);
     if (currentIndex >= slides.length) currentIndex = 0;
-
     let activeSlide;
-    slides.forEach((slide) => {
-      if (slide.hasAttribute("data-active")) {
-        activeSlide = slide;
-      } else {
-        return;
-      }
-    });
-    slides[currentIndex].setAttribute("data-active", "");
+    if (slideIsActive) {
+      slides2.forEach((slide) => {
+        if (slide.hasAttribute("data-active")) {
+          activeSlide = slide;
+        } else {
+          return;
+        }
+      });
+    } else {
+      slides.forEach((slide) => {
+        if (slide.hasAttribute("data-active")) {
+          activeSlide = slide;
+        } else {
+          return;
+        }
+      });
+    }
+    if (slideIsActive) {
+      slides2[currentIndex].setAttribute("data-active", "");
+    } else {
+      slides[currentIndex].setAttribute("data-active", "");
+    }
     delete activeSlide.dataset.active;
   });
 });
@@ -39,6 +53,7 @@ imgThumbnails.forEach((image, index) => {
     currentIndex = index;
     let activeSlide;
     let activeThumbnail;
+    console.log(currentIndex);
     slides.forEach((slide, index) => {
       if (slide.hasAttribute("data-active")) {
         activeSlide = slide;

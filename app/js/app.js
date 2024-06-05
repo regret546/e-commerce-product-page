@@ -56,7 +56,5 @@ function checkHeight() {
     header.classList.remove("addBorder");
   }
 }
-
 handleResize();
-
 window.addEventListener("resize", handleResize);
