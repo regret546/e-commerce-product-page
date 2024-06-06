@@ -122,13 +122,19 @@ body {
 }
 
 .background-wrapper2 {
-  position: fixed;
-  background-color: var(--clr--very-dark-blue);
-  opacity: 0.8;
-  inset: 0;
-  z-index: 3;
-  /*   transition: all 400ms ease-in;
-  animation-fill-mode: forwards; */
+  display: none;
+}
+@media (min-width: 700px) {
+  .background-wrapper2 {
+    display: block;
+    position: fixed;
+    background-color: var(--clr--very-dark-blue);
+    opacity: 0.8;
+    inset: 0;
+    z-index: 3;
+    /*   transition: all 400ms ease-in;
+    animation-fill-mode: forwards; */
+  }
 }
 
 .container {
@@ -314,6 +320,7 @@ body {
   display: none;
 }
 .content .product .carousel .slide {
+  pointer-events: none;
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -629,6 +636,7 @@ body {
     height: 420px;
   }
   .content .product .carousel ul .slide img {
+    pointer-events: all;
     cursor: pointer;
     height: 100%;
     width: 100%;

@@ -198,6 +198,7 @@
       }
 
       .slide {
+        pointer-events: none;
         position: absolute;
         inset: 0;
         opacity: 0;
@@ -559,6 +560,7 @@
           height: 420px;
           .slide {
             img {
+              pointer-events: all;
               cursor: pointer;
               height: 100%;
               width: 100%;

@@ -1,6 +1,7 @@
 const backgroundWrapper = document.querySelector("#bgWrapper");
 const backgroundWrapper2 = document.querySelector("#bgWrapper2");
 const imgThumbnails = document.querySelectorAll("#img-thumbnail");
+const imgThumbnails2 = document.querySelectorAll("#img-thumbnail2");
 const slides = document.querySelectorAll(".slide");
 const slides2 = document.querySelectorAll(".slide2");
 const buttons = document.querySelectorAll("[data-carousel-button]");
@@ -85,6 +86,34 @@ slides.forEach((slide) => {
       backgroundWrapper2.classList.add("background-wrapper2");
     } else {
       slideIsActive = false;
+    }
+  });
+});
+
+imgThumbnails2.forEach((image, index) => {
+  image.addEventListener("click", function () {
+    currentIndex = index;
+    let activeSlide2;
+    let activeThumbnail2;
+    console.log(currentIndex);
+    slides2.forEach((slide, index) => {
+      if (slide.hasAttribute("data-active")) {
+        activeSlide2 = slide;
+        activeThumbnail2 = imgThumbnails2[index];
+      } else {
+        return;
+      }
+    });
+    if (slides2[currentIndex].hasAttribute("data-active")) {
+      if (currentIndex === 0) {
+        imgThumbnails2[currentIndex].classList.add("isclick");
+      }
+      return;
+    } else {
+      slides2[currentIndex].setAttribute("data-active", "");
+      imgThumbnails2[currentIndex].classList.add("isclick");
+      delete activeSlide2.dataset.active;
+      activeThumbnail2.classList.remove("isclick");
     }
   });
 });
