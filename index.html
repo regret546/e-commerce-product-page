@@ -41,7 +41,13 @@
     <div class="container">
       <main class="content">
         <div class="carouseloverlay" id="carouselOverlay">
-          <i id="closeBtn" class="fa-solid fa-xmark"></i>
+          <img
+            src="images/icon-close.svg"
+            id="closeBtn"
+            class="fa-solid fa-xmark"
+            alt="close"
+          />
+
           <button class="carousel-button prev" data-carousel-button="prev">
             <img src="images/icon-previous.svg" alt="" />
           </button>
@@ -117,6 +123,7 @@
           </div>
           <div class="header__profile">
             <div class="header__profile_cart" id="cartBtn">
+              <p id="cartNumDisplay"></p>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
             <img
@@ -195,9 +202,21 @@
               </div>
               <div class="product__details_listing_orderoption">
                 <div class="product__details_listing_orderoption_quantity">
-                  <img class="minus" src="images/icon-minus.svg" alt="minus" />
-                  <p>0</p>
-                  <img class="plus" src="images/icon-plus.svg" alt="plus" />
+                  <img
+                    class="minus"
+                    src="images/icon-minus.svg"
+                    alt="minus"
+                    id="itemActionButtons"
+                    remove-item
+                  />
+                  <p id="numberOfItems">0</p>
+                  <img
+                    class="plus"
+                    src="images/icon-plus.svg"
+                    alt="plus"
+                    id="itemActionButtons"
+                    add-item
+                  />
                 </div>
                 <button
                   class="product__details_listing_orderoption_addtocartbtn"

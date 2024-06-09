@@ -159,9 +159,24 @@
       transition: none;
 
       &_cart {
+        position: relative;
+        p {
+          cursor: pointer;
+          display: none;
+          place-items: center;
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          font-weight: var(--fw--bold2);
+          font-size: 0.7rem;
+          border-radius: 50%;
+          background-color: var(--clr--orange);
+          color: var(--clr--white);
+          width: 20px;
+        }
         i {
           cursor: pointer;
-          font-size: 20px;
+          font-size: 22px;
           margin-top: 5px;
           color: var(--clr--darl-grayish-blue);
 
@@ -175,6 +190,10 @@
         width: 25px;
         height: 25px;
         border-radius: 50%;
+
+        &:hover {
+          border: 1.5px solid var(--clr--orange);
+        }
       }
     }
   }
@@ -385,10 +404,11 @@
       .fa-xmark {
         cursor: pointer;
         margin-top: -2rem;
-        font-size: 1.3rem;
         margin-left: auto;
         color: var(--clr--orange);
+        transition: all 200ms ease-in;
         &:hover {
+          transform: rotate(180deg);
           scale: 1.5;
         }
       }

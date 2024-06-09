@@ -287,9 +287,26 @@ body {
   gap: 1.5rem;
   transition: none;
 }
+.content .header__profile_cart {
+  position: relative;
+}
+.content .header__profile_cart p {
+  cursor: pointer;
+  display: none;
+  place-items: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-weight: var(--fw--bold2);
+  font-size: 0.7rem;
+  border-radius: 50%;
+  background-color: var(--clr--orange);
+  color: var(--clr--white);
+  width: 20px;
+}
 .content .header__profile_cart i {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 5px;
   color: var(--clr--darl-grayish-blue);
 }
@@ -301,6 +318,9 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+}
+.content .header__profile_avatar:hover {
+  border: 1.5px solid var(--clr--orange);
 }
 .content .product {
   display: flex;
@@ -491,11 +511,12 @@ body {
   .content .carouseloverlay .fa-xmark {
     cursor: pointer;
     margin-top: -2rem;
-    font-size: 1.3rem;
     margin-left: auto;
     color: var(--clr--orange);
+    transition: all 200ms ease-in;
   }
   .content .carouseloverlay .fa-xmark:hover {
+    transform: rotate(180deg);
     scale: 1.5;
   }
   .content .carouseloverlay ul {

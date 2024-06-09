@@ -3,7 +3,11 @@ const navBar = document.querySelector("#mainNav");
 const hamburgerMenu = document.querySelector("#ham-menu");
 const cartButton = document.querySelector("#cartBtn");
 const cardBasket = document.querySelector("#cartBkt");
+const itemHandlersButton = document.querySelectorAll("#itemActionButtons");
+const itemsCountDisplay = document.querySelector("#numberOfItems");
+const numHeaderCartDisplay = document.querySelector("#cartNumDisplay");
 
+let numberOfItems = 0;
 let slideIsActive = false;
 let cartIsActive = false;
 let navbarIsActive = false;
@@ -58,3 +62,27 @@ function checkHeight() {
 }
 handleResize();
 window.addEventListener("resize", handleResize);
+
+/* Add to cart function */
+itemHandlersButton.forEach((button) => {
+  button.addEventListener("click", function () {
+    if (button.hasAttribute("remove-item")) {
+      if (numberOfItems === 0) {
+        return;
+      } else {
+        numberOfItems -= 1;
+        itemsCountDisplay.innerText = numberOfItems;
+      }
+    }
+    if (button.hasAttribute("add-item")) {
+      numberOfItems += 1;
+      itemsCountDisplay.innerText = numberOfItems;
+    }
+    if (numberOfItems !== 0) {
+      numHeaderCartDisplay.innerText = numberOfItems;
+      numHeaderCartDisplay.style.display = "grid";
+    } else {
+      numHeaderCartDisplay.style.display = "none";
+    }
+  });
+});
