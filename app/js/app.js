@@ -6,6 +6,7 @@ const cardBasket = document.querySelector("#cartBkt");
 const itemHandlersButton = document.querySelectorAll("#itemActionButtons");
 const itemsCountDisplay = document.querySelector("#numberOfItems");
 const numHeaderCartDisplay = document.querySelector("#cartNumDisplay");
+const addToCartAButton = document.querySelector("#addToCardBtn");
 
 let numberOfItems = 0;
 let slideIsActive = false;
@@ -78,11 +79,14 @@ itemHandlersButton.forEach((button) => {
       numberOfItems += 1;
       itemsCountDisplay.innerText = numberOfItems;
     }
-    if (numberOfItems !== 0) {
-      numHeaderCartDisplay.innerText = numberOfItems;
-      numHeaderCartDisplay.style.display = "grid";
-    } else {
-      numHeaderCartDisplay.style.display = "none";
-    }
   });
+});
+
+addToCartAButton.addEventListener("click", function () {
+  if (numberOfItems !== 0) {
+    numHeaderCartDisplay.innerText = numberOfItems;
+    numHeaderCartDisplay.style.display = "grid";
+  } else {
+    numHeaderCartDisplay.style.display = "none";
+  }
 });
