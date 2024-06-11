@@ -82,11 +82,22 @@ itemHandlersButton.forEach((button) => {
   });
 });
 
+const cartItems = document.querySelector("#cartFill");
+const cartIsEmpty = document.querySelector("#cartEmpty");
+const itemCount = document.querySelector("#itemNumber");
+const itemTotalPrice = document.querySelector("#itemTotal");
+
 addToCartAButton.addEventListener("click", function () {
   if (numberOfItems !== 0) {
     numHeaderCartDisplay.innerText = numberOfItems;
+    cartIsEmpty.style.display = "none";
     numHeaderCartDisplay.style.display = "grid";
+    cartItems.style.display = "grid";
+    itemCount.innerText = numberOfItems;
+    itemTotalPrice.innerText = `$${numberOfItems * 125}`;
   } else {
     numHeaderCartDisplay.style.display = "none";
+    cartItems.style.display = "none";
+    cartIsEmpty.style.display = "block";
   }
 });
