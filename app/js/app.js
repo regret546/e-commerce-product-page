@@ -7,6 +7,11 @@ const itemHandlersButton = document.querySelectorAll("#itemActionButtons");
 const itemsCountDisplay = document.querySelector("#numberOfItems");
 const numHeaderCartDisplay = document.querySelector("#cartNumDisplay");
 const addToCartAButton = document.querySelector("#addToCardBtn");
+const cartItems = document.querySelector("#cartFill");
+const cartIsEmpty = document.querySelector("#cartEmpty");
+const itemCount = document.querySelector("#itemNumber");
+const itemTotalPrice = document.querySelector("#itemTotal");
+const deleteItemButton = document.querySelector("#deleteItem");
 
 let numberOfItems = 0;
 let slideIsActive = false;
@@ -82,12 +87,8 @@ itemHandlersButton.forEach((button) => {
   });
 });
 
-const cartItems = document.querySelector("#cartFill");
-const cartIsEmpty = document.querySelector("#cartEmpty");
-const itemCount = document.querySelector("#itemNumber");
-const itemTotalPrice = document.querySelector("#itemTotal");
-
-addToCartAButton.addEventListener("click", function () {
+//Update Card Function //
+function updateCart() {
   if (numberOfItems !== 0) {
     numHeaderCartDisplay.innerText = numberOfItems;
     cartIsEmpty.style.display = "none";
@@ -100,4 +101,13 @@ addToCartAButton.addEventListener("click", function () {
     cartItems.style.display = "none";
     cartIsEmpty.style.display = "block";
   }
+}
+
+addToCartAButton.addEventListener("click", function () {
+  updateCart();
+});
+
+deleteItemButton.addEventListener("click", function () {
+  numberOfItems -= 1;
+  updateCart();
 });
