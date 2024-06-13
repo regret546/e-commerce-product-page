@@ -13,6 +13,10 @@ const itemCount = document.querySelector("#itemNumber");
 const itemTotalPrice = document.querySelector("#itemTotal");
 const deleteItemButton = document.querySelector("#deleteItem");
 
+let errorMsg = "Sorry, You can't have 10 items on your cart";
+let successMsgCheckOut = "Successfully check out";
+let successAddToCart = "Succesffully added to cart";
+let quantityNumber = 0;
 let numberOfItems = 0;
 let slideIsActive = false;
 let cartIsActive = false;
@@ -73,18 +77,28 @@ window.addEventListener("resize", handleResize);
 itemHandlersButton.forEach((button) => {
   button.addEventListener("click", function () {
     if (button.hasAttribute("remove-item")) {
-      if (numberOfItems === 0) {
+      if (quantityNumber === 0) {
         return;
       } else {
-        numberOfItems -= 1;
-        itemsCountDisplay.innerText = numberOfItems;
+        quantityNumber -= 1;
+        itemsCountDisplay.innerText = quantityNumber;
       }
     }
     if (button.hasAttribute("add-item")) {
-      numberOfItems += 1;
-      itemsCountDisplay.innerText = numberOfItems;
+      quantityNumber += 1;
+      itemsCountDisplay.innerText = quantityNumber;
     }
   });
+});
+
+addToCartAButton.addEventListener("click", function () {
+  numberOfItems = numberOfItems + quantityNumber;
+  quantityNumber = 0;
+  itemsCountDisplay.innerText = quantityNumber;
+  updateCart();
+  if (numberOfItems !== 0) {
+    showToast(successMsgCheckOut);
+  }
 });
 
 //Update Card Function //
@@ -103,11 +117,16 @@ function updateCart() {
   }
 }
 
-addToCartAButton.addEventListener("click", function () {
-  updateCart();
-});
-
 deleteItemButton.addEventListener("click", function () {
   numberOfItems -= 1;
   updateCart();
 });
+
+function showToast(msg) {
+  let toast = document.createElement("div");
+  let toastText = document.createElement("p");
+  toastText.innerText = msg;
+  toast.appendChild(toastText);
+  toast.classList.add("toast-notification");
+  document.body.appendChild(toast);
+}

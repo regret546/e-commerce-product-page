@@ -1,5 +1,6 @@
 .content {
-  min-height: 100vh;
+  height: 100vh;
+  max-height: -webkit-fill-available;
   display: grid;
 
   .addBorder {
