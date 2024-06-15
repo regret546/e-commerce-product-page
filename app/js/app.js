@@ -12,10 +12,14 @@ const cartIsEmpty = document.querySelector("#cartEmpty");
 const itemCount = document.querySelector("#itemNumber");
 const itemTotalPrice = document.querySelector("#itemTotal");
 const deleteItemButton = document.querySelector("#deleteItem");
+const toastContainer = document.querySelector("#toastBox");
 
-let errorMsg = "Sorry, You can't have 10 items on your cart";
-let successMsgCheckOut = "Successfully check out";
-let successAddToCart = "Succesffully added to cart";
+let errorMsg =
+  '<i class="fa-solid fa-circle-xmark error"></i>Sorry, You can/t have 10 items on your cart';
+let successMsgCheckOut =
+  '<i class="fa-solid fa-circle-check success"></i>Successfully check out!';
+let successAddToCart =
+  '<i class="fa-solid fa-circle-check success"></i>Succesffully added to cart!';
 let quantityNumber = 0;
 let numberOfItems = 0;
 let slideIsActive = false;
@@ -61,7 +65,7 @@ function handleResize() {
   }
 }
 
-/* Add buttom-border when scrolled */
+// Add buttom-border when scrolled //
 window.addEventListener("scroll", checkHeight);
 function checkHeight() {
   if (window.scrollY > 40) {
@@ -73,9 +77,14 @@ function checkHeight() {
 handleResize();
 window.addEventListener("resize", handleResize);
 
-/* Add to cart function */
+// Add to cart function //
 itemHandlersButton.forEach((button) => {
   button.addEventListener("click", function () {
+    if (quantityNumber === 10) {
+      quantityNumber = 10;
+      showToast(errorMsg);
+      return;
+    }
     if (button.hasAttribute("remove-item")) {
       if (quantityNumber === 0) {
         return;
@@ -91,14 +100,31 @@ itemHandlersButton.forEach((button) => {
   });
 });
 
+// Add to cart function //
 addToCartAButton.addEventListener("click", function () {
+  if (quantityNumber !== 0) {
+    showToast(successAddToCart);
+  }
   numberOfItems = numberOfItems + quantityNumber;
   quantityNumber = 0;
   itemsCountDisplay.innerText = quantityNumber;
   updateCart();
-  if (numberOfItems !== 0) {
-    showToast(successMsgCheckOut);
-  }
+});
+
+// Delete Items on Cart//
+deleteItemButton.addEventListener("click", function () {
+  numberOfItems -= 1;
+  updateCart();
+});
+
+const checkButton = document.querySelector("#checkoutBtn");
+// Check Out //
+checkButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  showToast(successMsgCheckOut);
+  numberOfItems = 0;
+  quantityNumber = 0;
+  updateCart();
 });
 
 //Update Card Function //
@@ -117,16 +143,29 @@ function updateCart() {
   }
 }
 
-deleteItemButton.addEventListener("click", function () {
-  numberOfItems -= 1;
-  updateCart();
-});
-
+// Toast Notification //
 function showToast(msg) {
-  let toast = document.createElement("div");
-  let toastText = document.createElement("p");
-  toastText.innerText = msg;
-  toast.appendChild(toastText);
-  toast.classList.add("toast-notification");
-  document.body.appendChild(toast);
+  const allToastNotification = document.querySelectorAll(".toast-notification");
+  if (allToastNotification.length !== 5) {
+    let toast = document.createElement("div");
+    let toastText = document.createElement("p");
+    toastText.innerHTML = msg;
+    toast.appendChild(toastText);
+    toast.classList.add("toast-notification");
+    toastContainer.appendChild(toast);
+
+    if (msg.includes("error")) {
+      toast.classList.add("error");
+    }
+
+    if (msg.includes("success")) {
+      toast.classList.add("success");
+    }
+
+    setTimeout(() => {
+      toast.remove();
+    }, 5000);
+  } else {
+    return;
+  }
 }
