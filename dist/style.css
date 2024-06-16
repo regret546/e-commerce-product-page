@@ -212,66 +212,16 @@ body {
   }
 }
 
-/* 
-.toast-box {
-  position: absolute;
-  width: 400px;
-  bottom: 40px;
-  right: 20px;
-  .toast-notification {
-    margin-top: 0.5rem;
-    position: relative;
-    padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-    p {
-      display: flex;
-      align-items: center;
-      font-size: 1rem;
-      font-weight: var(--fw--bold2);
-      i {
-        font-size: 2rem;
-        margin-right: 0.5rem;
-
-        &.success {
-          color: green;
-        }
-        &.error {
-          color: red;
-        }
-      }
-    }
-    &.success::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 5px;
-      width: 100%;
-      background-color: green;
-      animation: anim 5s linear forwards;
-    }
-    &.error::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 5px;
-      width: 100%;
-      background-color: red;
-      animation: anim 4s linear forwards;
-    }
-
-    @keyframes anim {
-      100% {
-        width: 0;
-      }
-    }
-  }
+.attribution {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-align: center;
 }
- */
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 .container {
   min-height: 100dvh;
 }
