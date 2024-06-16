@@ -15,7 +15,7 @@ const deleteItemButton = document.querySelector("#deleteItem");
 const toastContainer = document.querySelector("#toastBox");
 
 let errorMsg =
-  '<i class="fa-solid fa-circle-xmark error"></i>Sorry, You can/t have 10 items on your cart';
+  '<i class="fa-solid fa-circle-xmark error"></i>Sorry, You can\'t have more than 10 items on your cart';
 let successMsgCheckOut =
   '<i class="fa-solid fa-circle-check success"></i>Successfully check out!';
 let successAddToCart =
@@ -82,6 +82,10 @@ itemHandlersButton.forEach((button) => {
   button.addEventListener("click", function () {
     if (quantityNumber === 10) {
       quantityNumber = 10;
+      showToast(errorMsg);
+      return;
+    }
+    if (quantityNumber + numberOfItems === 10) {
       showToast(errorMsg);
       return;
     }

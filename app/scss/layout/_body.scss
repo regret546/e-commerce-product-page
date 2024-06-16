@@ -97,17 +97,18 @@ body {
   }
   @media (min-width: 700px) {
     position: absolute;
-    inset: auto;
+    left: auto;
+    top: auto;
     width: 400px;
-    bottom: 40px;
     right: 20px;
-  }
-  .toast-notification {
-    p {
-      font-size: 1rem;
-    }
-    i {
-      font-size: 2rem;
+    bottom: 0;
+    .toast-notification {
+      p {
+        font-size: 1rem;
+      }
+      i {
+        font-size: 2rem;
+      }
     }
   }
 }

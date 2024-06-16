@@ -198,17 +198,18 @@ body {
 @media (min-width: 700px) {
   .toast-box {
     position: absolute;
-    inset: auto;
+    left: auto;
+    top: auto;
     width: 400px;
-    bottom: 40px;
     right: 20px;
+    bottom: 0;
   }
-}
-.toast-box .toast-notification p {
-  font-size: 1rem;
-}
-.toast-box .toast-notification i {
-  font-size: 2rem;
+  .toast-box .toast-notification p {
+    font-size: 1rem;
+  }
+  .toast-box .toast-notification i {
+    font-size: 2rem;
+  }
 }
 
 /* 
