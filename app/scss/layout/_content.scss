@@ -250,7 +250,6 @@
   }
 
   .product {
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -605,8 +604,6 @@
       }
 
       &__profile {
-        &_cart {
-        }
         &_avatar {
           width: 35px;
           height: 35px;
@@ -681,14 +678,11 @@
         text-align: left;
         max-width: 600px;
 
-        &_company {
-        }
         &_subject {
           font-size: 2.8rem;
           line-height: 2.5rem;
         }
-        &_info {
-        }
+
         &_listing {
           &_price {
             flex-direction: column;
@@ -697,8 +691,6 @@
               .discount_price {
                 padding-top: 5px;
               }
-            }
-            .previous_price {
             }
           }
 
